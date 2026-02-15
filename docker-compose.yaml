@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: airbnb_postgres
+    environment:
+      POSTGRES_USER: airbnb
+      POSTGRES_PASSWORD: airbnb
+      POSTGRES_DB: airbnb_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
